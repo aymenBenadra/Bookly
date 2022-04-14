@@ -38,7 +38,13 @@ Bookly is an anoucement site for books which allows you to sell or buy books onl
     CREATE DATABASE IF NOT EXISTS `bookly`;
     ```
 
-2. Creating Tables:
+2. Using Database:
+
+    ```sql
+    USE `bookly`;
+    ```
+
+3. Creating Tables:
     1. Users:
 
         ```sql
@@ -71,16 +77,20 @@ Bookly is an anoucement site for books which allows you to sell or buy books onl
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         ```
 
-3. Adding data:
+4. Adding data:
 
-    ```sql
-    INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `is_admin`) VALUES
-    (1, 'John', 'Doe', 'john@doe.com', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', true),
-    (2, 'Jane', 'Doe', 'jane@doe.com', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', false);
-    ```
+    1. Users
 
-    ```sql
-    INSERT INTO `announcements` (`user_id`, `title`, `description`, `photo`, `price`, `is_offer`) VALUES
-    (1, 'Clean Code by Robert C. Martin', 'Clean Code is a book written by Robert C. Martin. It is considered to be one of the most influential books on software design. It is widely considered to be the best book on software design. It is also the first book to be written in English. It is a book about software design and its principles, and how to write good software.', 'https://images-na.ssl-images-amazon.com/images/I/51-QQQQQQQL._SX331_BO1,204,203,200_.jpg', 10.99, false),
-    (2, "The Lord of the Rings by J.R.R. Tolkien', 'The Lord of the Rings is a fantasy novel written by English author and scholar J. R. R. Tolkien. The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work. Written in stages between 1937 and 1949, The Lord of the Rings is one of the best-selling novels ever written, with over 150 million copies sold", 'https://images-na.ssl-images-amazon.com/images/I/51-QQQQQQQL._SX331_BO1,204,203,200_.jpg', 15.99, true);
-    ```
+        ```sql
+        INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `is_admin`) VALUES
+        (1, 'John', 'Doe', 'john@doe.com', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', true),
+        (2, 'Jane', 'Doe', 'jane@doe.com', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', false);
+        ```
+
+    2. Announcements
+
+        ```sql
+        INSERT INTO `announcements` (`user_id`, `title`, `description`, `photo`, `price`, `is_offer`) VALUES
+        (1, 'Clean Code by Robert C. Martin', 'Clean Code is a book written by Robert C. Martin. It is considered to be one of the most influential books on software design. It is widely considered to be the best book on software design. It is also the first book to be written in English. It is a book about software design and its principles, and how to write good software.', 'https://images-na.ssl-images-amazon.com/images/I/51-QQQQQQQL._SX331_BO1,204,203,200_.jpg', 10.99, false),
+        (2, "The Lord of the Rings by J.R.R. Tolkien', 'The Lord of the Rings is a fantasy novel written by English author and scholar J. R. R. Tolkien. The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work. Written in stages between 1937 and 1949, The Lord of the Rings is one of the best-selling novels ever written, with over 150 million copies sold", 'https://images-na.ssl-images-amazon.com/images/I/51-QQQQQQQL._SX331_BO1,204,203,200_.jpg', 15.99, true);
+        ```
